@@ -83,7 +83,7 @@ h3 {
 
             {% for post in paginator.posts %}
                 <div class="row"> <!-- each row is a blog entry -->
-                    <div>
+                    <div class="col-xs-12">
                         <h2 class="blahblah">{{ post.title }}</h2>
                         <p class="text-muted">{{ post.date | date_to_string }}</p>
                         {{ post.content }}
@@ -94,21 +94,23 @@ h3 {
 
 
             <div class="row">
-                <nav>
-                    <ul class="pager">
-                        {% if paginator.previous_page %}
-                        <li class="previous"><a href="{{ paginator.previous_page_path }}"><span aria-hidden="true">&larr;</span> Newer</a></li>
-                        {% else %}
-                        <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Newer</a></li>
-                        {% endif %}
+                <div class="col-xs-12">
+                    <nav>
+                        <ul class="pager">
+                            {% if paginator.previous_page %}
+                            <li class="previous"><a href="{{ paginator.previous_page_path }}"><span aria-hidden="true">&larr;</span> Newer</a></li>
+                            {% else %}
+                            <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Newer</a></li>
+                            {% endif %}
 
-                        {% if paginator.next_page %}
-                        <li class="next"><a href="{{ paginator.next_page_path }}">Older <span aria-hidden="true">&rarr;</span></a></li>
-                        {% else %}
-                        <li class="next disabled"><a href="#">Older <span aria-hidden="true">&rarr;</span></a></li>
-                        {% endif %}
-                    </ul>
-                </nav>
+                            {% if paginator.next_page %}
+                            <li class="next"><a href="{{ paginator.next_page_path }}">Older <span aria-hidden="true">&rarr;</span></a></li>
+                            {% else %}
+                            <li class="next disabled"><a href="#">Older <span aria-hidden="true">&rarr;</span></a></li>
+                            {% endif %}
+                        </ul>
+                    </nav>
+                </div>
             </div>
         </div>
 
