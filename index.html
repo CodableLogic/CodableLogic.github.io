@@ -27,27 +27,27 @@ body {
     font-family: 'Open Sans';
 }
 .blahblah {
-    color: #c1092b; // red
     font-family: 'Open Sans';
+    color: #c1092b; /* red */
 }
 
 .blah {
-    color: #666082; // purple
+    color: #666082; /* purple */
 }
 
 .blaaack {
-    color: #ff9859; // orange
+    color: #ff9859; /* orange */
 }
 
-h3 {
-    color: #666082; // purple
+h2 {
+    color: #666082; /* purple */
 }
 
-// black    #353538
-// purple   #666082
-// orange   #ff9859
-// blue     #42AAA5
-// red      #c1092b
+/*  black    #353538 */
+/*  purple   #666082 */
+/*  orange   #ff9859 */
+/*  blue     #42AAA5 */
+/*  red      #c1092b */
 
 </style>
 </head>
@@ -84,7 +84,7 @@ h3 {
             {% for post in paginator.posts %}
                 <div class="row"> <!-- each row is a blog entry -->
                     <div class="col-xs-12">
-                        <h2 class="blahblah">{{ post.title }}</h2>
+                        <h1 class="blahblah">{{ post.title }}</h1>
                         <p class="text-muted">{{ post.date | date_to_string }}</p>
                         {{ post.content }}
                     </div>

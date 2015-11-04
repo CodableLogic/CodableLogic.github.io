@@ -17,7 +17,7 @@ default. Here, however, are the steps needed to have your linux VM connect to
 the serial port. I've tested this with CentOS 6, but this should work with
 other linux distributions.
 
-### Linux Console
+## Linux Console
 
 Add `console=tty0 console=ttyS0` to the kernel command line arguments of
 `/boot/grub/grub.conf`. This tells the kernel to use `tty0` (your monitor) and
@@ -28,7 +28,7 @@ Pretty simple.
 That's great and all, but now wouldn't it be nice to also view the grub console
 to choose which kernel to boot into? We can do that too.
 
-### GRUB Console
+## GRUB Console
 
 Edit `/boot/grub/grub.conf` and add the following lines.
 
