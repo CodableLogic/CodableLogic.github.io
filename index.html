@@ -28,6 +28,7 @@ body {
 }
 .blahblah {
     color: #c1092b; // red
+    font-family: 'Open Sans';
 }
 
 .blah {
@@ -36,6 +37,10 @@ body {
 
 .blaaack {
     color: #ff9859; // orange
+}
+
+h3 {
+    color: #666082; // purple
 }
 
 // black    #353538
@@ -77,45 +82,37 @@ body {
         <div class="col-md-9">
 
             {% for post in paginator.posts %}
-    <div class="row"> <!-- each row is a blog entry -->
-        <div class="col-xs-1 text-right">
-            <h3>~</h3>
-        </div>
-        <div class="col-xs-11"> <!-- the actual blog post -->
-            <h3 class="blahblah">{{ post.title }}</h3>
-            <p class="text-muted">{{ post.date | date_to_string }}</p>
-            {{ post.content }}
-        </div>
-    </div>
+                <div class="row"> <!-- each row is a blog entry -->
+                    <div>
+                        <h2 class="blahblah">{{ post.title }}</h2>
+                        <p class="text-muted">{{ post.date | date_to_string }}</p>
+                        {{ post.content }}
+                    </div>
+                </div>
             {% endfor %}
 
 
 
+            <div class="row">
+                <nav>
+                    <ul class="pager">
+                        {% if paginator.previous_page %}
+                        <li class="previous"><a href="{{ paginator.previous_page_path }}"><span aria-hidden="true">&larr;</span> Newer</a></li>
+                        {% else %}
+                        <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Newer</a></li>
+                        {% endif %}
 
-
-
-    <div class="row">
-        <div class="col-xs-11 col-xs-offset-1">
-            <nav>
-                <ul class="pager">
-                    {% if paginator.previous_page %}
-                    <li class="previous"><a href="{{ paginator.previous_page_path }}"><span aria-hidden="true">&larr;</span> Newer</a></li>
-                    {% else %}
-                    <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Newer</a></li>
-                    {% endif %}
-
-                    {% if paginator.next_page %}
-                    <li class="next"><a href="{{ paginator.next_page_path }}">Older <span aria-hidden="true">&rarr;</span></a></li>
-                    {% else %}
-                    <li class="next disabled"><a href="#">Older <span aria-hidden="true">&rarr;</span></a></li>
-                    {% endif %}
-                </ul>
-            </nav>
+                        {% if paginator.next_page %}
+                        <li class="next"><a href="{{ paginator.next_page_path }}">Older <span aria-hidden="true">&rarr;</span></a></li>
+                        {% else %}
+                        <li class="next disabled"><a href="#">Older <span aria-hidden="true">&rarr;</span></a></li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            </div>
         </div>
-    </div>
 
-    </div>
-        <div class="col-md-3 col-md-offset-0 col-xs-offset-1">
+        <div class="col-md-3">
             <h4>About Me</h4>
             <p>This blog started when I realized that there are a lot of things that are really interesting. Things that I would either like to keep for reference or share with others. Primarily, this blog was started in hopes of focusing on firmware design in FPGAs. However, it also includes posts related to my work in system administration.</p>
         </div>
