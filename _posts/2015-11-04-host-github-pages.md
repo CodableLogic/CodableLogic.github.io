@@ -13,12 +13,16 @@ However, it didnt' work [out-of-the-box](https://en.wikipedia.org/wiki/Out_of_th
 Here's what I did to get things going.
 
 Install the following packages using yum:
+
+* epel-release
 * ruby
 * ruby-devel
 * nodejs
 * zlib-devel
+* "@development tools"
 
-`sudo yum install ruby ruby-devel nodejs zlib-devel`
+`sudo yum install -y epel-release`
+`sudo yum install -y ruby ruby-devel nodejs zlib-devel "@development tools"`
 
 Then install the bundler gem.
 `gem install bundler`
@@ -43,13 +47,14 @@ If you want to do this all in one step, put the following into a script, make it
 
 
 ## dependencies
-sudo yum install ruby ruby-devel nodejs zlib-devel
+sudo yum install -y epel-release
+sudo yum install -y ruby ruby-devel nodejs zlib-devel "@development-tools"
 
 ## bundler
 gem install bundler
 
 ## install the github-pages gem
-mkdir tmp/
+mkdir -p tmp/
 cat <<"EOF" > tmp/Gemfile
 source 'https://rubygems.org'
 gem 'github-pages'
