@@ -21,8 +21,10 @@ Install the following packages using yum:
 * zlib-devel
 * "@development tools"
 
-`sudo yum install -y epel-release`
-`sudo yum install -y ruby ruby-devel nodejs zlib-devel "@development tools"`
+{% highlight bash %}
+sudo yum install -y epel-release
+sudo yum install -y ruby ruby-devel nodejs zlib-devel "@development tools"
+{% endhighlight %}
 
 Then install the bundler gem.
 `gem install bundler`
