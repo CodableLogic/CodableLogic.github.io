@@ -18,3 +18,8 @@ paginate: 5
 gems:
     - jemoji
 
+kramdown:
+    input: GFM
+
+highlighter: pygments
+
