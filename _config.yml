@@ -11,15 +11,11 @@ twitter_username: jekyllrb
 github_username:  jekyll
 
 # Build settings
-markdown: redcarpet
 
 paginate: 5
 
 gems:
     - jemoji
 
-kramdown:
-    input: GFM
-
-highlighter: pygments
+highlighter: rouge
 
