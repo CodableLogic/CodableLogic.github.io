@@ -10,6 +10,10 @@ Sorry if you were looking for something more informational.
 ```
 # Add host so that you can mention it in the certificate request
 ipa host-add mirrors.fedoraproject.org --desc="A fake host for supporting yum repo redirection"
+# Add the HTTP service to this host
+ipa service-add HTTP/mirrors.fedoraproject.org
+# Allow mirror-server to "manage" the new service
+ipa service-add-host HTTP/mirrors.fedoraproject.org --hosts=mirror-server.gringotts.idahoscientific.com
 # Add host as Subject Alternative Name in certificate
 ipa-getcert request -r -f /etc/pki/tls/certs/mirror-server.example.com.crt -k /etc/pki/tls/private/mirror-server.example.com.key -N "CN=mirror-server.example.com" -D mirror-server.example.com -D mirrors.fedoraproject.org -K HTTP/mirror-server.exmaple.com
 ```
